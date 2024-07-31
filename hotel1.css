@@ -1,0 +1,152 @@
+/* Styles pour le ruban et l'arrière-plan */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Assurer un calcul cohérent des dimensions */
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: black;
+    min-height: 100vh; /* Assurer que le body couvre au moins la hauteur de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    margin-top: 80px; /* Créer de l'espace pour le ruban fixe */
+}
+
+.arriere {
+    position: fixed; /* Fixer le fond pour qu'il reste en place lors du défilement */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Couvrir toute la hauteur de la page */
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(monument5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Conserver le fond fixe */
+    z-index: -1; /* Mettre l'arrière-plan derrière le contenu */
+}
+
+.ruban {
+    position: fixed; /* Fixer le ruban pour qu'il reste en haut de la page */
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent pour le ruban */
+    color: #fff;
+    z-index: 1000; /* Assurez-vous que le ruban est au-dessus de tout autre contenu */
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.ruban ul {
+    list-style: none;
+    display: flex;
+}
+
+.ruban ul li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.ruban ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.ruban ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.ruban ul li:hover::after {
+    width: 100%;
+}
+
+/* Styles pour la galerie d'hôtels */
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1; /* Assurez-vous que le contenu est au-dessus de l'arrière-plan */
+    padding-top: 80px; /* Ajuster pour tenir compte du ruban */
+}
+
+.hotel-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.hotel-block {
+    width: 400px; /* Largeur des blocs d'hôtels */
+    height: 500px; /* Hauteur des blocs d'hôtels (ajustez selon vos besoins) */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.image-gallery {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    height: 300px; /* Hauteur de la galerie d'images */
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assure que les images remplissent bien l'espace */
+    scroll-snap-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.hotel-description {
+    padding: 20px; /* Augmenter le padding pour plus de confort */
+    background-color: #fff;
+    flex-grow: 1; /* Permet au bloc description de remplir l'espace restant */
+}
+
+/* Nouveau CSS pour l'effet de zoom */
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.img-zoom:hover {
+    transform: scale(1.1);
+}
+
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    .ruban ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hotel-container {
+        padding-top: 20px; /* Ajuster pour tenir compte du ruban */
+    }
+
+    .hotel-block {
+        width: 100%; /* Adaptation pour les petits écrans */
+        height: auto; /* Permettre aux blocs de s'ajuster automatiquement */
+    }
+}

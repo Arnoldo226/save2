@@ -1,0 +1,135 @@
+/* Styles pour le ruban et l'arrière-plan */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #fff;
+    color: black;
+}
+
+.arriere {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url(monument5.jpg);
+    background-size: cover;
+    background-position: center;
+    background:gray;
+}
+
+.ruban {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for the ribbon */
+    color: #fff;
+    z-index: 1000; /* Make sure the ribbon is above all other content */
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    margin: 0 20px;
+    position: relative;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.menu li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.menu li:hover::after {
+    width: 100%;
+}
+
+/* Styles existants */
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1; /* Ensure content is below the ribbon */
+}
+
+.header, .footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.nav {
+    background-color: #e1e1e1;
+    padding: 20px;
+    display: flex;
+}
+
+.nav-left, .nav-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #e1e1e1;
+    margin: 5px;
+}
+
+.main {
+    background-color: #c1c1c1;
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+}
+
+.main-left, .main-right {
+    flex: 1;
+    padding: 20px;
+    background-color: #d1d1d1;
+    margin: 5px;
+}
+
+/* Nouveau CSS pour l'effet de zoom */
+.img-zoom {
+    transition: transform 0.5s ease;
+}
+
+.img-zoom:hover {
+    transform: scale(1.1);
+}
+
+/* Styles pour mobile */
+@media (max-width: 768px) {
+    .nav {
+        order: 1;
+        flex-direction: column;
+    }
+
+    .main {
+        order: 2;
+        flex-direction: column;
+    }
+
+    .footer {
+        order: 3;
+    }
+
+    .container {
+        flex-direc

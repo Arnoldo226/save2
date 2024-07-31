@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réservation d'Hôtel</title>
+    <link rel="stylesheet" href="Réservation.css">
+</head>
+<body>
+    <div class="arriere"></div>
+    <div class="ruban">
+        <ul class="menu">
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="patrimoine.html">Patrimoine</a></li>
+            <li><a href="hotel.html">Réservation d'hôtel</a></li>
+            <li><a href="galerie2.html">Galerie</a></li>
+        </ul>
+    </div>
+    <br>
+    <br>
+
+    <div class="container">
+        <h1>Réservation d'Hôtel</h1>
+
+        <fieldset>
+            <br>
+            <legend>Hébergement</legend>
+            <form action="action.php" method="post">
+                <label for="chambre">Type de chambre:</label>
+                <select id="chambre" name="chambre">
+                    <option value="double">Chambre double</option>
+                    <option value="individuelle">Chambre individuelle</option>
+                    <option value="triple">Chambre triple</option>
+                    <option value="familiale">Chambre familiale</option>
+                </select>
+
+                <label for="arrvee_date">Heure et date d'arrivée:</label>
+                <input type="date" id="arrvee_date" name="arrvee_date">
+                <input type="number" id="arrvee_hour" name="arrvee_hour" min="0" max="23" placeholder="Heures">
+                <input type="number" id="arrvee_minutes" name="arrvee_minutes" min="0" max="59" placeholder="Minutes">
+                <label for="arrvee_period">Période:</label>
+                <select id="arrvee_period" name="arrvee_period">
+                    <option value="Matin">Matin</option>
+                    <option value="Midi">Midi</option>
+                    <option value="Soir">Soir</option>
+                </select>
+
+                <label for="depart_date">Heure et date de départ:</label>
+                <input type="date" id="depart_date" name="depart_date">
+                <input type="number" id="depart_hour" name="depart_hour" min="0" max="23" placeholder="Heures">
+                <input type="number" id="depart_minutes" name="depart_minutes" min="0" max="59" placeholder="Minutes">
+                <label for="depart_period">Période:</label>
+                <select id="depart_period" name="depart_period">
+                    <option value="Matin">Matin</option>
+                    <option value="Midi">Midi</option>
+                    <option value="Soir">Soir</option>
+                </select>
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Resident</legend>
+            <form action="action.php" method="post"> 
+                <label for="firstname">Nom:</label>
+                <input type="text" id="firstname" name="firstname" autofocus>
+                <label for="lastname">Prénom:</label>
+                <input type="text" id="lastname" name="lastname" autofocus>
+                <label for="genre">Genre:</label>
+                <select id="genre" name="genre">
+                    <option value="Masculin">Masculin</option>
+                    <option value="Feminin">Féminin</option>
+                </select>
+                <label for="date_naissance">Date de Naissance:</label>
+                <input type="date" id="date_naissance" name="date_naissance">
+                <label for="pays">Pays d'origine:</label>
+                <input type="text" id="pays" name="pays">
+                <label for="number">Téléphone:</label>
+                <input type="number" id="number" name="number" placeholder="Téléphone">
+                <label for="email">Votre Email:</label>
+                <input type="email" id="email" name="email" placeholder="Votre Email" required>
+                <label for="profession">Profession:</label>
+                <input type="text" id="profession" name="profession" required>
+                <label for="langue_natal">Langue parlée:</label>
+                <select id="langue_natal" name="langue_natal">
+                    <option value="Ag">Anglais</option>
+                    <option value="Fr">Français</option>
+                    <option value="Es">Espagnol</option>
+                    <option value="It">Italien</option>
+                    <option value="Al">Allemand</option>
+                </select>
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Condition Suplementaire</legend>
+            <form action="action.php" method="post">
+                <label>Quelle est votre catégorie de foi?</label>
+                <input type="radio" id="cas1" name="cas" value="Christianisme" required>
+                <label for="cas1">Christianisme</label>
+                <input type="radio" id="cas2" name="cas" value="Musulmane" required>
+                <label for="cas2">Musulmane</label>
+                <input type="radio" id="cas3" name="cas" value="Animisme" required>
+                <label for="cas3">Animisme</label>
+                <input type="radio" id="cas4" name="cas" value="Athee" required>
+                <label for="cas4">Athée</label>
+
+                <label>Avez-vous des problèmes de santé?</label>
+                <input type="radio" id="choix1" name="choix" value="Oui" required>
+                <label for="choix1">Oui</label>
+                <input type="radio" id="choix2" name="choix" value="Non" required>
+                <label for="choix2">Non</label>
+
+                <label>Certification:</label>
+                <input type="checkbox" id="ok" name="ok" value="certifie" required>
+                <label for="ok">Je certifie que les informations ci-dessus sont véridiques et correctes</label>
+            </form>
+        </fieldset>
+
+        <fieldset>
+            <legend>Mode de Paiement</legend>
+            <p class="centered">Quel est votre mode de paiement?</p>
+            <p class="centered">
+                <label>Cash sur Place:</label>
+                <input type="checkbox" id="cas1" name="cas1" value="FCFA">
+                <label for="cas1">FCFA</label>
+                <input type="checkbox" id="cas2" name="cas2" value="EURO">
+                <label for="cas2">EURO</label>
+                <input type="checkbox" id="cas3" name="cas3" value="DOLLAR">
+                <label for="cas3">DOLLAR</label>
+            </p>
+            <p class="centered">
+                <label>Cartes de Crédit:</label>
+                <input type="checkbox" id="choix1" name="choix1" value="VISA">
+                <label for="choix1">VISA</label>
+                <input type="checkbox" id="choix2" name="choix2" value="MASTERCARD">
+                <label for="choix2">MASTERCARD</label>
+            </p>
+            <label for="paiement">Date du Paiement:</label>
+            <input type="date" id="paiement" name="paiement">
+        </fieldset>
+
+        <p class="centered">*******************Nous espérons vous accueillir très bientôt************************</p>
+    </div>
+</body>
+</html>
